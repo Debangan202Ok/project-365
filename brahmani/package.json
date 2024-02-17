@@ -1,0 +1,10 @@
+{
+  "name": "brahmani",
+  "version": "1.0.0",
+  "description": "A versatile customize build tool for web",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "debangan202ok",
+  "license": "MIT"
+}
