@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown {
+  transition: opacity 0.3s ease-in-out; /* Add your desired transition properties */
+}
