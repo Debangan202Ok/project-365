@@ -1,5 +1,5 @@
 import NavBar from "./components/navbar/Navbar";
-import SidenavBar from "./components/sidenavbar/SidenavBar";
+import SidenavBar, { Sidenavitems } from "./components/sidenavbar/SidenavBar";
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
       <NavBar />
       <div className="flex flex-1">
         <SidenavBar>
-          <h1>hello</h1>
+          <Sidenavitems />
         </SidenavBar>
         <h1>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur

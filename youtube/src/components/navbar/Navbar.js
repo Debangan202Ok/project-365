@@ -1,4 +1,5 @@
 import style from "./navstyle.json";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const NavBar = () => {
   return (
@@ -13,9 +14,11 @@ const NavBar = () => {
           <input
             type="search"
             placeholder="search"
-            className="border-2 w-full p-2"
+            className="border-2 w-full p-2 rounded-md"
           />
-          <span className="absolute right-0">Logo</span>
+          <span className="absolute right-0 border-l-2 px-2">
+            <SearchOutlinedIcon />
+          </span>
         </section>
         <section className="flex">
           <span>Notification</span>

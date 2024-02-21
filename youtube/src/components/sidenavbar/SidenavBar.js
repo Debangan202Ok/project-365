@@ -3,6 +3,8 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import Avatar from "@mui/material/Avatar";
 import { green } from "@mui/material/colors";
 
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+
 const SidenavBar = ({ children }) => {
   const [show, setShow] = useState(false);
 
@@ -28,9 +30,9 @@ const SidenavBar = ({ children }) => {
           <MenuOpenIcon fontSize="large" />
         </span>
       </header>
-        {/* navitems */}
+      {/* navitems */}
       <ul className="flex-1 my-2">{children}</ul>
-          {/* navitems  */}
+      {/* navitems  */}
       <footer className="flex my-2 border-t-[0.5px] pt-2">
         <div>
           <Avatar sx={{ bgcolor: green[500] }} variant="rounded">
@@ -47,6 +49,19 @@ const SidenavBar = ({ children }) => {
         </div>
       </footer>
     </nav>
+  );
+};
+
+export const Sidenavitems = () => {
+  return (
+    <a href="/" className="flex border-[0.5px] rounded-md items-center justify-center">
+      <div>
+          <HomeOutlinedIcon fontSize="large" />
+      </div>
+      <div className="flex-1 mx-2 hidden">
+        <span className="font-bold text-xl">Home</span>
+      </div>
+    </a>
   );
 };
 
