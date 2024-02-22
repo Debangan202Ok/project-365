@@ -3,6 +3,7 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import Avatar from "@mui/material/Avatar";
 import { green } from "@mui/material/colors";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { useLocation, NavLink } from "react-router-dom";
 
 const SideNavContext = createContext();
 
@@ -67,18 +68,23 @@ const SidenavBar = ({ children }) => {
   );
 };
 
-export const Sidenavitems = ({ icon, text }) => {
+export const Sidenavitems = ({ icon, text, path }) => {
   const showData = useContext(SideNavContext);
+  const location = useLocation();
   return (
-    <a
-      href="/"
-      className="flex  rounded-md items-center justify-center my-2 py-1 hover:bg-purple-500 hover:text-white transition-color duration-200 active:bg-green-400"
+    <NavLink
+      to={path}
+      className={`flex  rounded-md items-center justify-center my-2 py-1   transition-color duration-200 ${
+        location.pathname === path
+          ? "bg-green-400 text-white"
+          : "hover:bg-purple-500 hover:text-white"
+      } `}
     >
       <div>{icon}</div>
       <div className={`flex-1 mx-2 ${showData === true ? "hidden" : ""}`}>
         <span className="font-semibold text-sm">{text}</span>
       </div>
-    </a>
+    </NavLink>
   );
 };
 

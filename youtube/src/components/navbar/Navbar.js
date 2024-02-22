@@ -2,6 +2,7 @@ import style from "./navstyle.json";
 import Avatar from "@mui/material/Avatar";
 import { deepOrange } from "@mui/material/colors";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -10,9 +11,9 @@ const NavBar = () => {
       style={style.header}
     >
       <section>
-        <span className="font-bold">
+        <Link to={"/"} className="font-bold">
           DevYoutube<sup>IN</sup>
-        </span>
+        </Link>
       </section>
       <nav className="flex justify-between items-center w-[80%]">
         <section className="flex items-center w-[60%] relative">

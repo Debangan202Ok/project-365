@@ -3,7 +3,7 @@ import SidenavBar, { Sidenavitems } from "./components/sidenavbar/SidenavBar";
 import HomeIcon from "@mui/icons-material/Home";
 import SubscriptionsOutlinedIcon from "@mui/icons-material/SubscriptionsOutlined";
 import AppShortcutOutlinedIcon from "@mui/icons-material/AppShortcutOutlined";
-import VideoPreview from "./components/streamarea/Videopre";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
@@ -15,29 +15,29 @@ const App = () => {
       <div className="flex flex-1 overflow-hidden">
         {/* Side Navigation Bar */}
         <SidenavBar>
-          <Sidenavitems icon={<HomeIcon fontSize="large" />} text={"Home"} />
+          <Sidenavitems
+            icon={<HomeIcon fontSize="large" />}
+            text={"Home"}
+            path={"/"}
+          />
           <Sidenavitems
             icon={<SubscriptionsOutlinedIcon fontSize="large" />}
             text={"Subscriptions"}
+            path={"/subscriptions"}
           />
           <Sidenavitems
             icon={<AppShortcutOutlinedIcon fontSize="large" />}
             text={"Shorts"}
+            path={"/shorts"}
           />
         </SidenavBar>
 
         {/* VideoPreview Section */}
-        <section id="video-area" className="flex justify-center flex-wrap overflow-y-auto m-4 ">
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
-          <VideoPreview />
+        <section
+          id="video-area"
+          className="flex  overflow-y-auto m-4 "
+        >
+          <Outlet />
         </section>
       </div>
     </div>

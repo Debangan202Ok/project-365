@@ -1,5 +1,6 @@
 import Avatar from "@mui/material/Avatar";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const VideoPreview = () => {
   useEffect(() => {
@@ -7,7 +8,7 @@ const VideoPreview = () => {
   }, []);
 
   return (
-    <div className="w-[310px] h-fit mx-2 mb-8 self-start">
+    <Link to={"/watches/123"} className="w-[310px] h-fit mx-2 mb-8 self-start">
       <div className="w-full h-[175px] bg-slate-200 rounded-md object-cover">
         <img src="" alt="prev" />
       </div>
@@ -29,7 +30,7 @@ const VideoPreview = () => {
           <time>1sec ago</time>
         </section>
       </div>
-    </div>
+    </Link>
   );
 };
 
