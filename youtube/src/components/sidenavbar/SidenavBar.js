@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, createContext, useContext } from "react";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import Avatar from "@mui/material/Avatar";
 import { green } from "@mui/material/colors";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+
+const SideNavContext = createContext();
 
 const SidenavBar = ({ children }) => {
   const [show, setShow] = useState(false);
@@ -31,7 +33,9 @@ const SidenavBar = ({ children }) => {
         </span>
       </header>
       {/* navitems */}
-      <ul className="flex-1 my-2">{children}</ul>
+      <SideNavContext.Provider value={show}>
+        <ul className="flex-1 my-2">{children}</ul>
+      </SideNavContext.Provider>
       {/* navitems  */}
       <footer className="flex my-2 border-t-[0.5px] pt-2">
         <div>
@@ -53,12 +57,20 @@ const SidenavBar = ({ children }) => {
 };
 
 export const Sidenavitems = () => {
+  const showData = useContext(SideNavContext);
   return (
-    <a href="/" className="flex border-[0.5px] rounded-md items-center justify-center">
+    <a
+      href="/"
+      className="flex border-[0.5px] rounded-md items-center justify-center hover:bg-purple-500 hover:text-white transition-color duration-200"
+    >
       <div>
-          <HomeOutlinedIcon fontSize="large" />
+        <HomeOutlinedIcon fontSize="large" />
       </div>
-      <div className="flex-1 mx-2 hidden">
+      <div
+        className={`flex-1 mx-2 ${
+          showData === true ? "hidden" : ""
+        }`}
+      >
         <span className="font-bold text-xl">Home</span>
       </div>
     </a>
