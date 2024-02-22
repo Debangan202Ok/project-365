@@ -5,3 +5,29 @@
 .dropdown {
   transition: opacity 0.3s ease-in-out; /* Add your desired transition properties */
 }
+
+/* Disable scrollbar by setting width to 0 */
+#video-area {
+  scrollbar-width: 0;
+}
+
+/* For Firefox */
+#video-area {
+  overflow-y: scroll;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+#video-area::-webkit-scrollbar {
+  width: 0;
+  display: none; /* Optional: Hide scrollbar in WebKit browsers */
+}
+
+/* Optional: Style for WebKit browsers */
+#video-area::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* Optional: Style for WebKit browsers */
+#video-area::-webkit-scrollbar-track {
+  background-color: transparent;
+}
