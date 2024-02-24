@@ -35,7 +35,7 @@ const App = () => {
         {/* VideoPreview Section */}
         <section
           id="video-area"
-          className="flex  overflow-y-auto m-4 "
+          className="flex-1 border-2 overflow-x-hidden  overflow-y-auto m-2 "
         >
           <Outlet />
         </section>
