@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import VideoPreview from "../components/streamarea/Videopre";
 import WatchArea from "../components/streamarea/watches/Watcharea";
+import MostPopular from "../components/streamarea/Popularvid";
 
 export const router = createBrowserRouter([
   {
@@ -11,20 +11,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <div className=" flex flex-wrap w-fit justify-evenly ">
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-            <VideoPreview />
-          </div>
-        ),
+        element: <MostPopular />,
       },
       {
         path: "/watches/:id",
@@ -32,8 +19,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/subscriptions",
-        element: <h1>Subscription</h1>
-      }
+        element: <h1>Subscription</h1>,
+      },
     ],
   },
 ]);
